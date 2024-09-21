@@ -14,22 +14,11 @@ const mockImages = mockUrl.map((url, index) => ({
   url,
 }));
 
-function TopNav() {
-  return (
-    <nav className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
-      <div>Gallery</div>
-      <div>Sign in</div>
-    </nav>
-  );
-}
-
 export default async function HomePage() {
   const images = await db.query.images.findMany();
 
   return (
     <main className="">
-      <TopNav />
-
       <div className="flex flex-col gap-4">
         {images.map((image, index) => (
           <div key={image.id + "-" + index} className="w-48">
