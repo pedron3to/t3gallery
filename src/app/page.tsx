@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { db } from "~/server/db";
+
+export const dynamic = "force-dynamic";
 
 const mockUrl = [
   "https://utfs.io/f/9PQTfydC5wYyROnx9bmUBWNcbi80tMygHZCYGlPhfE43e6xo",
@@ -25,7 +26,6 @@ function TopNav() {
 export default async function HomePage() {
   const posts = await db.query.posts.findMany();
 
-  console.log({ posts });
   return (
     <main className="">
       <TopNav />
