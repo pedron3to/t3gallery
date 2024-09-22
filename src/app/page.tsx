@@ -19,9 +19,9 @@ export async function Images() {
   const images = await db.query.images.findMany();
 
   return (
-    <div className="flex flex-col gap-4">
-      {images.map((image, index) => (
-        <div key={image.id + "-" + index} className="w-48">
+    <div className="flex flex-wrap gap-4">
+      {images.map((image) => (
+        <div key={image.id} className="w-48">
           <img src={image.url} />
           <div>{image.name}</div>
         </div>
@@ -34,7 +34,7 @@ export default async function HomePage() {
   const images = await db.query.images.findMany();
 
   return (
-    <main className="">
+    <main className="flex flex-row">
       <SignedOut>
         <div className="h-full w-full text-center text-2xl">
           Please sign in above
