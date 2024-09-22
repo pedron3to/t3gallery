@@ -11,10 +11,16 @@ export async function Images() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {images?.map((image) => (
-        <div key={image.id} className="w-48 h-48">
-          <Image src={image.url} style={{
-            objectFit: "contain",
-          }} alt={image.name} width={480} height={480}/>
+        <div key={image.id} className="h-48 w-48">
+          <Image
+            src={image.url}
+            style={{
+              objectFit: "contain",
+            }}
+            alt={image.name}
+            width={480}
+            height={480}
+          />
           <div>{image.name}</div>
         </div>
       ))}
