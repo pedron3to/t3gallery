@@ -21,16 +21,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; modal?: React.ReactNode }>) {
   return (
     <ClerkProvider>
-      <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
       <html lang="en" className={`${GeistSans.variable}`}>
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <body>
-          <header></header>
-          <main>
+          <div className="grid-rows[auto,1fr] grid h-screen">
             <TopNav />
-            {children}
-            {modal}
-            <div id="modal-root" />
-          </main>
+            <main className="overflow-y-scroll">{children}</main>
+          </div>
+          {modal}
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
