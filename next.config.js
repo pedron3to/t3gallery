@@ -32,7 +32,5 @@ const config = withSentryConfig(coreConfig, {
 
 export default config;
 
-// Injected content via Sentry wizard below
 
 
-module.exports = withSentryConfig(module.exports, );
