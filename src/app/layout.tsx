@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   modal,
-}: Readonly<{ children: React.ReactNode, modal?: React.ReactNode }>) {
+}: Readonly<{ children: React.ReactNode; modal?: React.ReactNode }>) {
   return (
     <ClerkProvider>
       <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
@@ -29,7 +29,7 @@ export default function RootLayout({
             <TopNav />
             {children}
             {modal}
-            <div id="modal-root"/>
+            <div id="modal-root" />
           </main>
         </body>
       </html>

@@ -15,15 +15,15 @@ export async function Images() {
         <div key={image.id} className="h-48 w-48">
           <Link href={`/img/${image.id}`}>
             <Image
-            src={image.url}
-            style={{
-              objectFit: "contain",
-            }}
-            alt={image.name}
-            width={480}
-            height={480}
+              src={image.url}
+              style={{
+                objectFit: "contain",
+              }}
+              alt={image.name}
+              width={480}
+              height={480}
             />
-            </Link>
+          </Link>
           <div>{image.name}</div>
         </div>
       ))}
